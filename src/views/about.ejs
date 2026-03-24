@@ -1,14 +1,21 @@
-<!DOCTYPE html>
-<html lang="de">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, inital-scale=1.0" />    
-        <title><%= title %></title>
-        <link rel="stylesheet" href="/css/style.css" />
-    </head>
-    <body>
-        <h1>Über Mana Iran</h1>
-        <p>Hier wird es erklärt, wer wir überhaupt sind und was wir tun</p>
-        <a href="/">Zurück zum Startseite</a>
-    </body>
-</html>    
+<%- include("partials/header") %>
+
+<section class="page-section">
+  <h2><%= t.about.title %></h2>
+  <p><%= t.about.intro %></p>
+</section>
+
+<section class="team-section">
+  <h3><%= t.about.teamTitle %></h3>
+
+  <div class="team-grid">
+    <% teamMembers.forEach(member => { %>
+      <div class="team-card">
+        <h4><%= member.name %></h4>
+        <p><%= member.role %></p>
+      </div>
+    <% }) %>
+  </div>
+</section>
+
+<%- include("partials/footer") %>

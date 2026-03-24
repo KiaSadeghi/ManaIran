@@ -1,21 +1,198 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f7f7f7;
+  color: #222;
 }
 
-header{
-    background: #111;
-    color: blue;
-    padding: 20px;
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-nv a{
-    color: white;
-    margin-right: 15px;
-    text-decoration: none;
+.site-header {
+  background-color: #111;
+  color: white;
+  padding: 16px 0 10px;
 }
 
-main{
-    padding: 20px;
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+
+.lang-switch {
+  display: flex;
+  gap: 12px;
+}
+
+.lang-switch a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.lang-switch a:hover {
+  text-decoration: underline;
+}
+
+.brand-row {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.logo {
+  margin: 0;
+  font-size: 32px;
+}
+
+.nav-row {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.date-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: right;
+}
+
+.date-line {
+  color: #ddd;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+main {
+  min-height: 70vh;
+  padding: 40px 0;
+}
+
+.hero {
+  padding: 80px 0;
+  background: linear-gradient(180deg, #f4f4f4 0%, #ffffff 100%);
+  border-radius: 16px;
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
+.hero-kicker {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.hero h2 {
+  font-size: 48px;
+  line-height: 1.1;
+  margin: 0 0 20px 0;
+  color: #111;
+}
+
+.hero-text {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #111;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #333;
+}
+
+.btn-secondary {
+  background-color: #eaeaea;
+  color: #111;
+}
+
+.btn-secondary:hover {
+  background-color: #dcdcdc;
+}
+
+.page-section {
+  margin-bottom: 48px;
+}
+
+.team-section h3 {
+  margin-bottom: 20px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.team-card {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.team-card h4 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.site-footer {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.rtl .date-box {
+  text-align: left;
 }

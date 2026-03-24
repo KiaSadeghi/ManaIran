@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang = "de">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, inital-scale=1.0">
-        <title><%= title %></title>
-        <link rel="stylesheet" href="/css/style.css" />
-    </head>
-    <body>
-        <h1>Contact</h1>
-        <p>You can place your Contact information here.</p>
-        <a href="/" >zurück zum Startseite</a>
-    </body>
-</html>        
+<%- include("partials/header") %>
+
+<section class="page-section">
+  <h2><%= t.contact.title %></h2>
+  <p><%= t.contact.intro %></p>
+</section>
+
+<%- include("partials/footer") %>

@@ -7,20 +7,63 @@
  * Example Template: <h1><%= title %></h1>
  */
 
+import { translations } from "../utils/translations.js";
+
+const getLang = (req) => {
+  const lang = req.query.lang || "de";
+  return translations[lang] ? lang : "de";
+};
+
+const teamMembers = [
+  { name: "Name 1", role: "Leitung" },
+  { name: "Name 2", role: "Organisation" },
+  { name: "Name 3", role: "Kommunikation" },
+  { name: "Name 4", role: "Ordnung / Sicherheit" },
+];
+
 export const getHomePage = (req, res) => {
-    res.render("index", {title: "Mana Iran"});
+  const lang = getLang(req);
+  const t = translations[lang];
+
+  res.render("index", {
+    title: t.home.title,
+    t,
+    lang,
+  });
 };
 
-export const getAboutPage = (req, res) =>{
-    res.render("about", {title: "Über Mana Iran"});
+export const getAboutPage = (req, res) => {
+  const lang = getLang(req);
+  const t = translations[lang];
+
+  res.render("about", {
+    title: t.about.title,
+    t,
+    lang,
+    teamMembers,
+  });
 };
 
-export const getEventsPage = (req, res) =>{
-    res.render("events", {title: "Veranstaltungen"});
+export const getEventsPage = (req, res) => {
+  const lang = getLang(req);
+  const t = translations[lang];
+
+  res.render("events", {
+    title: t.events.title,
+    t,
+    lang,
+  });
 };
 
-export const getContactPage = (req, res) =>{
-    res.render("contact", {title: "Kontakt"});
+export const getContactPage = (req, res) => {
+  const lang = getLang(req);
+  const t = translations[lang];
+
+  res.render("contact", {
+    title: t.contact.title,
+    t,
+    lang,
+  });
 };
 
 /**
