@@ -2,6 +2,7 @@ const gregorianDateEl = document.getElementById("gregorian-date");
 const imperialDateEl = document.getElementById("imperial-date");
 
 const now = new Date();
+const lang = document.body.dataset.lang;
 
 function faToEnDigits(str) {
   return str
@@ -17,8 +18,26 @@ function faToEnDigits(str) {
     .replace(/۹/g, "9");
 }
 
+function enToFaDigits(str) {
+  return str
+    .replace(/0/g, "۰")
+    .replace(/1/g, "۱")
+    .replace(/2/g, "۲")
+    .replace(/3/g, "۳")
+    .replace(/4/g, "۴")
+    .replace(/5/g, "۵")
+    .replace(/6/g, "۶")
+    .replace(/7/g, "۷")
+    .replace(/8/g, "۸")
+    .replace(/9/g, "۹");
+}
+
+let locale = "en-GB";
+if (lang === "de") locale = "de-DE";
+if (lang === "fa") locale = "fa-IR-u-ca-gregory";
+
 if (gregorianDateEl) {
-  const gregorianDate = new Intl.DateTimeFormat("en-GB", {
+  const gregorianDate = new Intl.DateTimeFormat(locale, {
     weekday: "long",
     year: "numeric",
     month: "long",
@@ -50,18 +69,7 @@ if (imperialDateEl) {
 
   const yearEn = faToEnDigits(yearFa);
   const imperialYear = parseInt(yearEn, 10) + 1180;
-  const imperialYearFa = imperialYear
-  .toString()
-  .replace(/0/g, "۰")
-  .replace(/1/g, "۱")
-  .replace(/2/g, "۲")
-  .replace(/3/g, "۳")
-  .replace(/4/g, "۴")
-  .replace(/5/g, "۵")
-  .replace(/6/g, "۶")
-  .replace(/7/g, "۷")
-  .replace(/8/g, "۸")
-  .replace(/9/g, "۹");
+  const imperialYearFa = enToFaDigits(imperialYear.toString());
 
   imperialDateEl.textContent = `${weekday} ${day} ${month} ${imperialYearFa}`;
 }

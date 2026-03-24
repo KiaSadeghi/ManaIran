@@ -7,32 +7,34 @@
   <link rel="stylesheet" href="/css/style.css" />
 </head>
 
-<body class="<%= lang === 'fa' ? 'rtl' : 'ltr' %>">
+<body class="<%= lang === 'fa' ? 'rtl' : 'ltr' %>" data-lang="<%= lang %>">
   <header class="site-header">
-    <div class="container header-top">
-      <div class="lang-switch">
-        <a href="?lang=de">DE</a>
-        <a href="?lang=en">EN</a>
-        <a href="?lang=fa">FA</a>
+    <div class="container header-grid">
+      <div class="header-left">
+        <div class="lang-switch">
+          <a href="?lang=de">DE</a>
+          <a href="?lang=en">EN</a>
+          <a href="?lang=fa">FA</a>
+        </div>
       </div>
 
-      <div class="date-box">
-        <div class="date-line" id="gregorian-date"></div>
-        <div class="date-line" id="imperial-date"></div>
+      <div class="header-center">
+        <h1 class="logo"><%= t.brand %></h1>
+
+        <nav class="navbar">
+          <a href="/?lang=<%= lang %>"><%= t.nav.home %></a>
+          <a href="/about?lang=<%= lang %>"><%= t.nav.about %></a>
+          <a href="/events?lang=<%= lang %>"><%= t.nav.events %></a>
+          <a href="/contact?lang=<%= lang %>"><%= t.nav.contact %></a>
+        </nav>
       </div>
-    </div>
 
-    <div class="container brand-row">
-      <h1 class="logo"><%= t.brand %></h1>
-    </div>
-
-    <div class="container nav-row">
-      <nav class="navbar">
-        <a href="/?lang=<%= lang %>"><%= t.nav.home %></a>
-        <a href="/about?lang=<%= lang %>"><%= t.nav.about %></a>
-        <a href="/events?lang=<%= lang %>"><%= t.nav.events %></a>
-        <a href="/contact?lang=<%= lang %>"><%= t.nav.contact %></a>
-      </nav>
+      <div class="header-right">
+        <div class="date-box">
+          <div class="date-line" id="gregorian-date"></div>
+          <div class="date-line" id="imperial-date"></div>
+        </div>
+      </div>
     </div>
   </header>
 
